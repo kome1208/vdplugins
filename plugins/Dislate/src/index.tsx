@@ -50,8 +50,8 @@ export default {
                     let translateType = existingCachedObject ? "Revert" : "Translate"
 
                     const translate = async (from?: string) => {
-                        const fromLanguage = from ?? settings.DislateLangFrom
-                        const toLanguage = settings.DislateLangTo
+                        const fromLanguage = from ?? settings.DislateDeepLLangFrom
+                        const toLanguage = settings.DislateDeepLLangTo
                         const isTranslated = translateType === "Translate"
                         const translate = await Translate.translate(originalMessage.content,
                             {
@@ -65,7 +65,7 @@ export default {
                             message: {
                                 ...originalMessage,
                                 content: `${isTranslated ? translate : (existingCachedObject as object)[messageId]}`
-                                    + ` ${isTranslated ? `\`[${settings.DislateLangAbbr
+                                    + ` ${isTranslated ? settings.DislateDeepLHideLangTo ? "" : `\`[${settings.DislateDeepLLangAbbr
                                         ? (LanguageNames[toLanguage]).toUpperCase()
                                         : Format.string(toLanguage)}]\``
                                         : ""}`,

@@ -4,14 +4,18 @@ export type LanguageType = {
 }
 
 export type SettingsType = {
-    DislateLangFrom: string
-    DislateLangTo: string
-    DislateLangAbbr: boolean
+    DislateDeepLLangFrom: string
+    DislateDeepLLangTo: string
+    DislateDeepLLangAbbr: boolean
+    DislateDeepLHideLangTo: boolean
+    DislateDeepLAPIKey: string
 }
 
 export interface TranslationData {
-    src: string
-    sentences: {
-        trans: string
-    }[]
+    translations: [
+        {
+            detected_source_language: string,
+            text: string
+        }
+    ]
 }

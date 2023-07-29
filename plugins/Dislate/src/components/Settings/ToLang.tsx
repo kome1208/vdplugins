@@ -19,13 +19,13 @@ export default () => {
             }}
         />
         {
-            Object.values(LanguageNames).filter((e: string) => e !== "detect").filter(i => i.includes(query)).map((i, id) => <FormRow
+            Object.values(LanguageNames).filter((e: string) => e !== "Detect").filter(i => i.includes(query)).map((i, id) => <FormRow
                 label={i}
                 trailing={() => <FormRow.Arrow />}
                 onPress={() => {
-                    if (settings.DislateLangTo == i) return
-                    settings.DislateLangTo = i
-                    showToast(`Saved ToLang to ${settings.DislateLangTo}`, getAssetIDByName("check"))
+                    if (settings.DislateDeepLLangTo == i) return
+                    settings.DislateDeepLLangTo = i
+                    showToast(`Saved ToLang to ${settings.DislateDeepLLangTo}`, getAssetIDByName("check"))
                 }}
             />)
         }

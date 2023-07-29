@@ -7,7 +7,7 @@ import { Translate, settings, ClydeUtils } from "../../common"
 import { Codeblock } from "@vendetta/ui/components"
 import { ApplicationCommandType, ApplicationCommandInputType, ApplicationCommandOptionType } from "../../../../../ApplicationCommandTypes"
 
-const languageOptions = LanguageNames.filter((e: string) => e !== "detect")
+const languageOptions = LanguageNames.filter((e: string) => e !== "Detect")
     .map((item: string) => ({
         name: Format.string(item),
         displayName: Format.string(item),
@@ -19,8 +19,8 @@ export default registerCommand({
     id: "translate",
     name: "translate",
     displayName: "translate",
-    description: "Send a message using Dislate in any language chosen, using the Google Translate API.",
-    displayDescription: "Send a message using Dislate in any language chosen, using the Google Translate API.",
+    description: "Send a message using Dislate in any language chosen, using the DeepL Translate API.",
+    displayDescription: "Send a message using Dislate in any language chosen, using the DeepL Translate API.",
     type: ApplicationCommandType.CHAT as number,
     inputType: ApplicationCommandInputType.BUILT_IN_TEXT as number,
     options: [
@@ -52,7 +52,7 @@ export default registerCommand({
         const translatedContent = await Translate.translate(
             message,
             {
-                fromLanguage: settings.DislateLangFrom as string,
+                fromLanguage: settings.DislateDeepLLangFrom as string,
                 toLanguage: language,
             },
             languageMap

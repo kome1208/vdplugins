@@ -7,7 +7,7 @@ import { LanguageType, TranslationData } from "../def"
  * @param {string} fromLang : The language to translate from.
  * @param {boolean} cancel : Toggles translation. If false will return untranslated text.
  */
-async function translate(text: string, { fromLanguage = "detect", toLanguage = "english" }: LanguageType, languages, cancel?: boolean) {
+async function translate(text: string, { fromLanguage = "Detect", toLanguage = "English" }: LanguageType, languages, cancel?: boolean) {
     const result = await Translate(text, {
         fromLanguage: languages[fromLanguage],
         toLanguage: languages[toLanguage]

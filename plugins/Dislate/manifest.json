@@ -1,5 +1,5 @@
 {
-    "name": "Dislate Lite",
+    "name": "Dislate-DeepL Lite",
     "description": "Translates text into a desired language.",
     "authors": [
         {
@@ -9,6 +9,10 @@
         {
             "name": "sapphire :>",
             "id": "757982547861962752"
+        },
+        {
+            "name": "kome1 ;>",
+            "id": "783305816702844990"
         }
     ],
     "main": "src/index.tsx",
